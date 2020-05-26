@@ -1,0 +1,24 @@
+#! /usr/bin/python3
+from telethon import sync, events, TelegramClient
+import random
+import asyncio
+from datetime import datetime
+import re
+
+api_id = 
+api_hash = ''
+
+client = TelegramClient('test', api_id, api_hash, connection_retries=None)
+
+print("logeado")
+
+@client.on(events.NewMessage(chats=('me')))
+async def forwardtest(event):
+    myreg = r"hi.ha"
+    if event.raw_text.startswith(myreg):
+        print("report leido en me")
+        await message.forward_to('me')
+        print("report enviado al grupo")
+        
+clientYacel.start()
+clientYacel.run_until_disconnected()
